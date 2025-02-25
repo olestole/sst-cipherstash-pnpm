@@ -1,0 +1,4 @@
+*.env* filter=git-crypt diff=git-crypt
+docker-compose.yml filter=git-crypt diff=git-crypt
+*.pem filter=git-crypt diff=git-crypt
+*.jwk filter=git-crypt diff=git-crypt

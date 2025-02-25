@@ -1,0 +1,27 @@
+{
+  "name": "@journalia/core",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Ole August Støle",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "test:watch": "NODE_ENV=test vitest",
+    "test": "NODE_ENV=test vitest run",
+    "lint:tsc": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@journalia/db": "workspace:*"
+  },
+  "peerDependencies": {
+    "dayjs": ">=1.11.0",
+    "typescript": "^5",
+    "zod": ">=3.20.0"
+  },
+  "devDependencies": {
+    "vitest": "^2.1.5"
+  },
+  "exports": {
+    "./utils/*": "./src/lib/utils/*.ts"
+  }
+}

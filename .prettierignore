@@ -1,0 +1,8 @@
+**/.next/**
+**/.open-next/**
+**/generated/**
+**/dist/**
+*.json
+.yarn
+sst-env.d.ts
+*_snapshot.json

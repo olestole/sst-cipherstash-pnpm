@@ -1,0 +1,32 @@
+{
+  "name": "journalia",
+  "version": "0.1.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "NO_SST=true turbo run dev",
+    "lint": "turbo run lint",
+    "lint:eslint": "turbo run lint:eslint",
+    "lint:prettier": "prettier --check \"**/*.{js,jsx,ts,tsx,json}\"",
+    "lint:prettier:fix": "prettier --write \"**/*.{js,jsx,ts,tsx,json}\"",
+    "lint:tsc": "turbo run lint:tsc --force",
+    "lint:all": "turbo run lint:prettier lint:eslint lint:tsc",
+    "build": "turbo run build",
+    "sst:dev": "concurrently -n sst:dev,sst \"pnpm turbo sst:dev\" \"pnpm sst dev --print-logs\"",
+    "sst:sso": "aws sso login --sso-session=journalia"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0",
+    "esbuild": "0.19.2",
+    "prettier": "^3.4.1",
+    "sst": "^3.3.35",
+    "turbo": "^2.2.3"
+  },
+  "packageManager": "pnpm@9.6.0",
+  "dependencies": {
+    "@pulumi/pulumi": "^3.150.0"
+  }
+}
